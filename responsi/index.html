@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sunshine Hotel - Reservasi Online</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        // navigasi ke seksi home
+        <li><a href="#cek-ketersediaan">Cek Ketersediaan</a></li>
+        // navigasi ke seksi cek ketersediaan
+        <li><a href="#reservasi">Reservasi Kamar</a></li>
+        // navigasi ke seksi reservasi
+      </ul>
+    </nav>
+    <header>
+      <h1>Sunshine Hotel</h1>
+      <p>Kenyamanan dan Pelayanan Terbaik untuk Anda</p>
+    </header>
+    <main>
+      <section id="home">
+        // berisi ucapan selamat datang dan fasilitas hotel
+        <h2>Selamat Datang di Sunshine Hotel!</h2>
+        <h3>Nikmati pengalaman menginap yang nyaman dan menyenangkan di Sunshine Hotel. Kami menyediakan berbagai fasilitas dan pelayanan terbaik untuk memenuhi kebutuhan Anda.</h3>
+        <div class="home-images">
+          <img src="lb.jpg" alt="Sunshine Hotel" class="home-image" />
+          <img src="vhp.jpg" alt="Hotel Room" class="home-image" />
+          <img src="rst.jpg" alt="Hotel Room" class="home-image" />
+        </div>
+      </section>
+      <section id="cek-ketersediaan">
+        // mengecek ketersediaan kamar
+        <h2><center>Cek Ketersediaan Kamar</center></h2>
+        <form id="form-ketersediaan" action="cek-ketersedian.php" method="post">
+          <label for="tanggal-masuk">Tanggal Masuk:</label>
+          <input type="date" id="tanggal-masuk" name="tanggal-masuk" required />
+          <label for="tanggal-keluar">Tanggal Keluar:</label>
+          <input type="date" id="tanggal-keluar" name="tanggal-keluar" />
+          <button type="submit">Cek Ketersediaan</button>
+        </form>
+        <div id="hasil-ketersediaan"></div> // hasil cek ketersediaan
+      </section>
+
+      <section id="reservasi">
+        // untuk proses reservasi kamar
+        <h2>Reservasi Kamar</h2>
+        <form id="form-reservasi" action="proses-reservasi.php" method="post">
+          //Formulir reservasi <label for="nama-tamu">Nama Tamu:</label> // input nama tamu
+          <input type="text" id="nama-tamu" name="nama-tamu" required />
+          <label for="tipe-kamar">Tipe Kamar:</label>
+          <select id="tipe-kamar" name="tipe-kamar" required>
+            // milih tipe kamar
+            <option value="standard">Standard</option>
+            <option value="deluxe">Deluxe</option>
+            <option value="suite">Suite</option>
+          </select>
+          <div class="room-image">
+            // gambar tipe kamar
+            <div class="room-image-container">
+              <p>Standard Room</p>
+              <img src="std.jpg" alt="Standard Room" class="room-image" id="standar-image" />
+            </div>
+            <div class="room-image-container">
+              <p>Standard Room</p>
+              <img src="Dx.jpg" alt="Standard Room" class="room-image" id="standar-image" />
+            </div>
+            <div class="room-image-container">
+              <p>Standard Room</p>
+              <img src="suite.jpg" alt="Standard Room" class="room-image" id="standar-image" />
+            </div>
+          </div>
+          <label for="tanggal-masuk">Tanggal Masuk:</label> // input tanggal masuk
+          <input type="date" id="tanggal-masuk" name="tanggal-masuk" required />
+          <label for="tanggal-keluar">Tanggal Keluar:</label> // input tanggal keluar
+          <input type="date" id="tanggal-keluar" name="tanggal-keluar" required />
+          <button type="submit">Reservasi</button> // tombol submit
+        </form>
+        <div id="hasil-reservasi"></div> // hasil reservasi
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Sunshine Hotel</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
